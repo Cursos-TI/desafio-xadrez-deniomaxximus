@@ -11,6 +11,13 @@ void recursivoTorre(int n){
     }
 }
 
+void recursivoRainha(int n){
+    if(n > 0){
+        recursivoRainha(n-1);
+        printf("Esquerda\n");
+    }
+}
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -26,16 +33,10 @@ int main() {
     printf("\nMovimento da Torre\n");
     recursivoTorre(movimentoTorre);
 
-    /*for(movimentoTorre = 1;movimentoTorre<=5;movimentoTorre++){
-        printf("Direita\n");
-    }*/
 
     // Implementação de Movimentação da Rainha
     printf("\nMovimento da Rainha\n");
-    do{
-        printf("Esquerda\n");
-        movimentoRainha--;
-    }while(movimentoRainha>0);
+    recursivoRainha(movimentoRainha);
 
     
     // Nível Aventureiro - Movimentação do Cavalo
