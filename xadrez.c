@@ -18,16 +18,24 @@ void recursivoRainha(int n){
     }
 }
 
+void recursivoBispo(int n){
+    if(n > 0){
+        recursivoBispo(n-1);
+        printf("Cima, ");
+        while (n > 0){
+            printf(" Esquerda\n");
+            break;
+        }
+    }
+}
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
     int movimentoBispo = 5, movimentoTorre = 5, movimentoRainha = 8, movimentoCavalo = 1;
     // Implementação de Movimentação do Bispo
     printf("Movimento do Bispo:\n");
-    while (movimentoBispo >= 1){
-        printf("Cima, direita\n");
-        movimentoBispo--;
-    }
+    recursivoBispo(movimentoBispo);
     
     // Implementação de Movimentação da Torre
     printf("\nMovimento da Torre\n");
